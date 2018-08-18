@@ -1,0 +1,54 @@
+<!--
+  Generated template for the NewsViewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>News-View</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content style="background: url('assets/imgs/baki.jpg');  background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+background-color: #464646;" >
+
+
+
+  <ion-card *ngFor="let loop of NewsArray">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/ARY_Digital_Logo_2.png">
+      </ion-avatar>
+      <h2><b>Author Name : </b> {{loop.author}}</h2>
+      <h2><b>Date      : </b>{{loop.publishedAt}}</h2>
+    </ion-item>
+  
+    <img src="{{loop.urlToImage}}">
+  
+    <ion-card-content>
+      <p>{{loop.description}}</p>
+    </ion-card-content>
+  
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <!-- <ion-icon name="thumbs-up"></ion-icon> -->
+          <div><a href="{{loop.url}}">For More Details Click Here</a></div>
+        </button>
+      </ion-col>
+      
+    </ion-row>
+  
+  </ion-card>
+
+
+</ion-content>
